@@ -65,11 +65,6 @@ public class ProjectileFire : NetworkBehaviour
         }
     }
 
-    private void MuzzleFlashShow()
-    {
-
-    }
-
     private void HandleFilre(bool firePressed)
     {
         firing = firePressed;
@@ -94,6 +89,10 @@ public class ProjectileFire : NetworkBehaviour
         spawnedProjectile = Instantiate(serverProjectilePrefab, position, Quaternion.identity);
         spawnedProjectile.transform.up = direction;
         Physics2D.IgnoreCollision(playerCollider, spawnedProjectile.GetComponent<Collider2D>());
+        if (spawnedProjectile.TryGetComponent<DealDamageOnContact>(out DealDamageOnContact dealDamageOnContact))
+        {
+            dealDamageOnContact.SetOwner(OwnerClientId);
+        }
         if (spawnedProjectile.TryGetComponent<Rigidbody2D>(out Rigidbody2D rb))
         {
             rb.velocity = rb.transform.up * projectileSpeed;
