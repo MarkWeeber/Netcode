@@ -36,19 +36,8 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "141b44f7-b66f-4309-97c9-47a6581b4bb3",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "Primary Fire",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "48986333-1c22-4d24-91dd-fcc4dd1aa589",
-                    "path": "<Keyboard>/space",
+                    "id": "6fa8bea4-02a3-4cff-90c1-34bd6dbcf7d3",
+                    "path": "<Keyboard>/ctrl",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard and Mouse",
