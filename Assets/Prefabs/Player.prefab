@@ -145,7 +145,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1289808097
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: 8769e4453ce5bc3429cfba7d58fbef13, type: 3}
   m_Color: {r: 1, g: 0.80092657, b: 0, a: 1}
@@ -261,7 +261,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1289808097
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 20
   m_Sprite: {fileID: 21300000, guid: a94bf141bd2044c4399e321445c83112, type: 3}
   m_Color: {r: 1, g: 0.8, b: 0, a: 1}
@@ -421,7 +421,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1289808097
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 40
   m_Sprite: {fileID: 21300000, guid: 9d8bd4f8481a773488649b18bd02cbc1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -568,7 +568,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1289808097
-  m_SortingLayer: 1
+  m_SortingLayer: 2
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 1a838243856331f4681c559527ad5846, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -649,6 +649,7 @@ GameObject:
   - component: {fileID: 1479699223505193363}
   - component: {fileID: 340778464751952558}
   - component: {fileID: 5561616334756328444}
+  - component: {fileID: 8124189670096342937}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -752,7 +753,7 @@ MonoBehaviour:
   inputReader: {fileID: 11400000, guid: d0588f146d30a044b92b1f5ebb06d5f9, type: 2}
   bodyTransform: {fileID: 1842394269742402292}
   rigidBody: {fileID: 2999866027235279164}
-  movementSpeed: 120
+  movementSpeed: 300
   turnRate: 180
 --- !u!114 &1479699223505193363
 MonoBehaviour:
@@ -786,7 +787,7 @@ MonoBehaviour:
   clientProjectilePrefab: {fileID: 6141609485209587925, guid: cefc03a52e0f85140b5059cf11d870a2, type: 3}
   muzzleFlashGameObject: {fileID: 5814508329872879587}
   playerCollider: {fileID: 1137531232794319333}
-  projectileSpeed: 5
+  projectileSpeed: 1
   fireRateInSeconds: 0.45
   muzzleFlashDuration: 0.12
 --- !u!114 &5561616334756328444
@@ -810,3 +811,20 @@ MonoBehaviour:
   OnHealthChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &8124189670096342937
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7115734730714109209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa0a3f803ca996349911c0ea6699564f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetMask:
+    serializedVersion: 2
+    m_Bits: 128
+  TotalCoins:
+    m_InternalValue: 0

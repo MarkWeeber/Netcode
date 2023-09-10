@@ -60,7 +60,7 @@ public class ProjectileFire : NetworkBehaviour
         {
             fireRateTimer = fireRateInSeconds;
             fireCoolDownReady = false;
-            PrimaryFireServerRpc(firePortPoint.position, firePortPoint.up);
+            FireProjectileServerRpc(firePortPoint.position, firePortPoint.up);
             FireProjectile(firePortPoint.position, firePortPoint.up);
         }
     }
@@ -84,7 +84,7 @@ public class ProjectileFire : NetworkBehaviour
     }
 
     [ServerRpc]
-    private void PrimaryFireServerRpc(Vector3 position, Vector3 direction)
+    private void FireProjectileServerRpc(Vector3 position, Vector3 direction)
     {
         spawnedProjectile = Instantiate(serverProjectilePrefab, position, Quaternion.identity);
         spawnedProjectile.transform.up = direction;
@@ -97,11 +97,11 @@ public class ProjectileFire : NetworkBehaviour
         {
             rb.velocity = rb.transform.up * projectileSpeed;
         }
-        PrimaryFireClientRpc(position, direction);
+        FireProjectileClientRpc(position, direction);
     }
 
     [ClientRpc]
-    private void PrimaryFireClientRpc(Vector3 position, Vector3 direction)
+    private void FireProjectileClientRpc(Vector3 position, Vector3 direction)
     {
         if(IsOwner) { return; }
         FireProjectile(position, direction);
